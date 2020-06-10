@@ -1,14 +1,28 @@
 {
-    "name": "note-taker",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "express": "^4.16.4"
-    }
+  "name": "note-taker",
+  "version": "1.0.0",
+  "description": "note taker app using express.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Neko Carrera",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NekoCarreraDesigns/note-taker.git"
+  },
+  "keywords": [
+    "note",
+    "taker",
+    "express.js"
+  ],
+  "bugs": {
+    "url": "https://github.com/NekoCarreraDesigns/note-taker/issues"
+  },
+  "homepage": "https://github.com/NekoCarreraDesigns/note-taker#readme"
 }

@@ -12,16 +12,25 @@ app.use(express.json());
 app.get("/", (req, res) => {
     res.sendfile(path.join(appRoot) + "/public/", "index.html")
 });
+
 app.get("/notes", (req, res) => {
     res.sendfile(path.join(appRoot) + "/public/", "notes.html")
 });
+
 app.get("/api/notes", (req, res) => {
-    let notes = fs.readFileSync("/db/db.json", "utf-8", function (err, data) {
+    let notes = fs.readFileSync("./db/db.json", "utf-8", function (err, data) {
         if (err) throw (err);
         return data;
     })
     return res.json(JSON.parse(notes));
 });
+
+app.post("/api/notes", (req, res) => {
+    let newNote = req.body;
+    console.log(newNote);
+    notes.push(newNote);
+    res.json(newNote);
+})
 
 
 

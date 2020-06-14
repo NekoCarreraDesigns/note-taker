@@ -1,8 +1,8 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
-const db = require("../db/db.json");
-const uuid = require("uuid/v4")
+const db = require("./db/db.json");
+
 
 const app = express();
 const PORT = 5500
@@ -10,13 +10,14 @@ global.appRoot = path.resolve(__dirname);
 
 app.use(express.urlencoded({ extend: true }));
 app.use(express.json());
+app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-    res.sendfile(path.join(appRoot) + "/public/", "index.html")
+    res.sendfile(path.join(appRoot) + "/public/index.html")
 });
 
 app.get("/notes", (req, res) => {
-    res.sendfile(path.join(appRoot) + "/public/", "notes.html")
+    res.sendfile(path.join(appRoot) + "/public/notes.html")
 });
 
 app.get("/api/notes", (req, res) => {
@@ -45,7 +46,6 @@ app.delete("/api/notes/:id", (req, res) => {
 
 
 app.post("/api/notes", (req, res) => {
-    let noteId = uuid();
     let newNote = {
         id: noteId,
         title: req.body.title,

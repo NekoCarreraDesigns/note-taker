@@ -34,10 +34,10 @@ app.delete("/api/notes/:id", (req, res) => {
     fs.readFile("./db/db.json", "utf8", (err, data) => {
         if (err) throw (err);
 
-        const allNotes = JSON.parse(data);
-        const newAllNotes = allNotes.filter(note => note.id != noteId1)
+        const notes = JSON.parse(data);
+        const newNotes = newNotes.filter(note => notes.id != noteId1)
 
-        fs.writeFile("./db/db.json", JSON.stringify(newAllNotes, null, 2), (err) => {
+        fs.writeFile("./db/db.json", JSON.stringify(newNotes, null, 2), (err) => {
             if (err) throw (err);
             res.send(db);
             console.log("Note Deleted");

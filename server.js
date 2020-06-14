@@ -47,6 +47,7 @@ app.delete("/api/notes/:id", (req, res) => {
 
 
 app.post("/api/notes", (req, res) => {
+    let noteId = req.params.id
     let newNote = {
         id: noteId,
         title: req.body.title,

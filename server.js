@@ -13,11 +13,11 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-    res.sendfile(path.join(appRoot) + "/public/index.html")
+    res.sendfile(path.join(appRoot) + "/public/" + "index.html")
 });
 
 app.get("/notes", (req, res) => {
-    res.sendfile(path.join(appRoot) + "/public/notes.html")
+    res.sendfile(path.join(appRoot) + "/public/" + "notes.html")
 });
 
 app.get("/api/notes", (req, res) => {

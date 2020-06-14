@@ -4,8 +4,9 @@ const path = require("path");
 const db = require("./db/db.json");
 
 
+
 const app = express();
-const PORT = 5500
+const PORT = 3000
 global.appRoot = path.resolve(__dirname);
 
 app.use(express.urlencoded({ extended: true }));
@@ -13,11 +14,11 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-    res.sendfile(path.join(appRoot) + "/public/" + "index.html")
+    res.sendfile(path.join(__dirname) + "/public/" + "index.html")
 });
 
 app.get("/notes", (req, res) => {
-    res.sendfile(path.join(appRoot) + "/public/" + "notes.html")
+    res.sendfile(path.join(__dirname) + "/public/" + "notes.html")
 });
 
 app.get("/api/notes", (req, res) => {

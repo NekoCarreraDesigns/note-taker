@@ -25,12 +25,31 @@ app.get("/api/notes", (req, res) => {
     return res.json(JSON.parse(notes));
 });
 
+app.delete("/api/notes/:id", (req, res) => {
+    let noteId = req.params.id;
+    fs.readFile("./db/db.json", "utf8", (err, data) => {
+        if (err) throw (err);
+
+        const allNotes = json.parse(data);
+        const newAllNotes = allNotes.filter(note => note.id != noteId)
+
+        fs.writeFile("./db/db.json", JSON.stringify(newAllNotes, null, 2), (err) => {
+            if (err) throw (err);
+            res.send(db);
+            console.log("Note Deleted");
+        });
+    });
+});
+
+
 app.post("/api/notes", (req, res) => {
     let newNote = req.body;
     console.log(newNote);
     notes.push(newNote);
     res.json(newNote);
 })
+
+app.delete("/api/note/:id",)
 
 
 

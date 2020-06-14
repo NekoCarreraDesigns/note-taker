@@ -8,7 +8,7 @@ const app = express();
 const PORT = 5500
 global.appRoot = path.resolve(__dirname);
 
-app.use(express.urlencoded({ extend: true }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 

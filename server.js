@@ -1,6 +1,8 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
+const db = require("../db/db.json");
+const uuid = require("uuid/v4")
 
 const app = express();
 const PORT = 5500
@@ -30,7 +32,7 @@ app.delete("/api/notes/:id", (req, res) => {
     fs.readFile("./db/db.json", "utf8", (err, data) => {
         if (err) throw (err);
 
-        const allNotes = json.parse(data);
+        const allNotes = JSON.parse(data);
         const newAllNotes = allNotes.filter(note => note.id != noteId)
 
         fs.writeFile("./db/db.json", JSON.stringify(newAllNotes, null, 2), (err) => {
@@ -43,16 +45,30 @@ app.delete("/api/notes/:id", (req, res) => {
 
 
 app.post("/api/notes", (req, res) => {
-    let newNote = req.body;
-    console.log(newNote);
-    notes.push(newNote);
-    res.json(newNote);
-})
+    let noteId = uuid();
+    let newNote = {
+        id: noteId,
+        title: req.body.title,
+        text: req.body.text
+    };
 
-app.delete("/api/note/:id",)
+    fs.readFile("./db/db.json", "utf8", (err, data) => {
+        if (err) throw (err);
 
+        const notes = JSON.parse(data);
+        notes.push(newNote);
+
+        fs.writeFile("./db/db.json", JSON.stringify(notes, null, 2), err => {
+            if (err) throw (err);
+            res.send(db);
+            console.log("Note created")
+        });
+
+    });
+
+});
 
 
 app.listen(PORT, function () {
-    console.log("I'm listening on" + PORT)
+    console.log("I'm listening on PORT:" + PORT)
 });

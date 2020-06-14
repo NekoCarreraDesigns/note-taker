@@ -30,12 +30,12 @@ app.get("/api/notes", (req, res) => {
 });
 
 app.delete("/api/notes/:id", (req, res) => {
-    let noteId = req.params.id;
+    let noteId1 = req.params.id;
     fs.readFile("./db/db.json", "utf8", (err, data) => {
         if (err) throw (err);
 
         const allNotes = JSON.parse(data);
-        const newAllNotes = allNotes.filter(note => note.id != noteId)
+        const newAllNotes = allNotes.filter(note => note.id != noteId1)
 
         fs.writeFile("./db/db.json", JSON.stringify(newAllNotes, null, 2), (err) => {
             if (err) throw (err);

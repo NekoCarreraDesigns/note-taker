@@ -28,15 +28,14 @@ app.get("/api/notes", (req, res) => {
     })
     return res.json(JSON.parse(notes));
 });
-
+//delete function is broken
 app.delete("/api/notes/:id", (req, res) => {
     let noteId1 = parseInt(req.params.id);
     fs.readFile("./db/db.json", "utf8", (err, data) => {
         if (err) throw (err);
 
         let notes = JSON.parse(data);
-        let newNotes = json.filter(note => notes.id !== noteId1)
-
+        let newNotes = notes.filter(note => { return notes.id !== noteId1 });
         fs.writeFile("./db/db.json", JSON.stringify(newNotes, null, 2), (err) => {
             if (err) throw (err);
             res.send(db);
@@ -62,7 +61,7 @@ app.post("/api/notes", (req, res) => {
 
         fs.writeFile("./db/db.json", JSON.stringify(notes, null, 2), err => {
             if (err) throw (err);
-            res.send(db);
+            res.sendFile(db);
             console.log("Note created")
         });
 

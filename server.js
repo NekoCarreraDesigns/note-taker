@@ -4,7 +4,7 @@ const path = require("path");
 const compression = require("compression")
 
 const app = express();
-app.use(compression({ filter: shouldCompress }))
+app.use(compression())
 const PORT = process.env.PORT || 3000;
 global.appRoot = path.resolve(__dirname);
 

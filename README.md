@@ -1,26 +1,55 @@
-# note-taker
-This is the note taker app. It uses express.js for the backend functionality.
-it allows the user to create notes, save notes, and delete notes
 
-version: 1.0.0
+  # Title: Note Taker
 
-installation: clone repo and run the server
+  ![last commit](https://img.shields.io/github/last-commit/NekoCarreraDesigns/note-taker?style=flat-square)![license badge](https://img.shields.io/github/license/NekoCarreraDesigns/note-taker?style=flat-square)
 
-contributors: Nicholas C. Maas
+  ### URL: https://afternoon-sea-03704.herokuapp.com/
 
-tests: none at this time
+  ## Description 
+  
+  Note taker app that use express.js for the backend
 
-email: denvermaas@gmail.com
+  ## Table of Contents 
+   
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Future Developments](#futureDevelopments)
+  * [Credits](#credits)
+  * [Questions](#questions)
+  
+  ## Installation 
+  ``  clone repo, npm i, node server.js, go to localhost:3000
+  ``  
+  ## Usage 
+  
+  Used for taking notes, add notes, and delete notes.
 
-Steps for install:
-1. Clone repo
-2. install dependencies
-3. from the command line run "node server.js"
-4. open browser and go to localhost:3000
+  ## Future Developments
 
-usage:
-after installation and starting the server, click the get started button
-write notes, save them, view them, and then delete them
+  undefined
 
-reporting bugs:
-Email Nicholas C. Maas at denvermaas@gmail.com
+  ## Credits
+
+  * [Express.js](https://www.npmjs.com/package/express)
+
+* [Bootstrap](https://getbootstrap.com/)
+
+* node.js
+
+  ## Contributors: 
+  
+  Nicholas C. Maas
+
+  ## Questions?
+
+  Contact me at  [denvernick@hotmail.com]
+  
+  or[![Follow on Github] (https://img.shields.io/github/followers/NekoCarreraDesigns?label=Follow&style=social)](http://www.github.com/NekoCarreraDesigns)
+
+  Copyright © 2020 Nicholas C. Maas (http://www.github.com/NekoCarreraDesigns)
+
+  ---
+
+  ##### _Created with [NekoCarreraDesigns readme generator] (https://github.com/NekoCarreraDesigns/readme-generator)
+
+  

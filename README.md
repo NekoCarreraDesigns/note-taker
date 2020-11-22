@@ -4,7 +4,7 @@
 
 ### URL: https://afternoon-sea-03704.herokuapp.com/
 
-![](assets/NoteTaker.gif)
+![](public/assets/NoteTaker.gif)
 
 ## Description
 
@@ -20,7 +20,7 @@ Note taker app that use express.js for the backend
 
 ## Installation
 
-` clone repo, npm i, node server.js, go to localhost:3000 `
+`clone repo, npm i, node server.js, go to localhost:3000`
 
 ## Usage
 
